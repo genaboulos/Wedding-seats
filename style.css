@@ -1,116 +1,206 @@
+:root {
+  --ink: #17324d;
+  --muted: #5e7891;
+  --blue-900: #123a5a;
+  --blue-700: #27618f;
+  --blue-400: #8bbce0;
+  --blue-100: #eaf5ff;
+  --white: #ffffff;
+  --paper: rgba(255, 255, 255, 0.88);
+  --line: rgba(74, 123, 160, 0.26);
+  --gold: #b68a48;
+  --shadow: 0 28px 70px rgba(18, 58, 90, 0.16);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fdfdfd 0%,
-            #eef5fb 40%,
-            #d9e8f5 100%
-        );
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(222, 239, 252, 0.82)),
+    url("assets/blue-floral-frame.svg") center / cover no-repeat fixed;
 }
 
-.background-overlay {
-    position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(circle at top right,
-        rgba(255,255,255,0.8),
-        transparent 35%);
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
+.seating {
+  width: min(100%, 940px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
 
-    width: 480px;
-    max-width: 92%;
+.masthead {
+  min-height: 560px;
+  padding: clamp(30px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58)),
+    linear-gradient(180deg, rgba(221, 239, 252, 0.42), rgba(255, 255, 255, 0.76)),
+    url("assets/wedding-photo.jpg") center / cover no-repeat;
+  border-right: 1px solid var(--line);
+}
 
-    padding: 55px 45px;
-
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(12px);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 25px 60px rgba(80,110,150,0.18);
-
-    text-align: center;
+.monogram {
+  color: var(--blue-900);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-style: italic;
+  line-height: 1.1;
 }
 
 h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 52px;
-    font-weight: 700;
-    color: #224b72;
-    margin-bottom: 12px;
+  margin: 0;
+  max-width: 11ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.4rem, 8vw, 6.6rem);
+  line-height: 0.92;
+  font-weight: 400;
+  color: var(--blue-900);
 }
 
-.subtitle {
-    color: #5d7186;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 30px;
+.date {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--blue-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.date::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.lookup {
+  padding: clamp(28px, 5vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.lookup h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.04;
+  font-weight: 400;
+  color: var(--blue-900);
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 input {
-    width: 100%;
-    padding: 16px 18px;
-    margin-bottom: 16px;
-
-    border: 1px solid #d3dfeb;
-    border-radius: 14px;
-
-    font-size: 15px;
-    background: white;
-}
-
-input:focus {
-    outline: none;
-    border-color: #7ca7cc;
-    box-shadow: 0 0 0 4px rgba(124,167,204,0.15);
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid rgba(39, 97, 143, 0.28);
+  border-radius: 8px;
+  padding: 0 16px;
+  color: var(--ink);
+  font: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  outline: none;
 }
 
 button {
-    width: 100%;
-    padding: 16px;
-
-    border: none;
-    border-radius: 14px;
-
-    background: linear-gradient(
-        135deg,
-        #7ea9cf,
-        #5f89b1
-    );
-
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-
-    transition: 0.3s ease;
+  min-height: 54px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 18px;
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  cursor: pointer;
 }
 
-button:hover {
-    transform: translateY(-2px);
+.result {
+  min-height: 148px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(234, 245, 255, 0.88), rgba(255, 255, 255, 0.94));
 }
 
-#result {
-    margin-top: 28px;
-    font-size: 22px;
-    line-height: 1.6;
-    color: #274f76;
-    font-family: 'Cormorant Garamond', serif;
+.result[hidden] {
+  display: none;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.guest-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  color: var(--blue-900);
+}
+
+.table strong {
+  font-size: 3rem;
+}
+
+.note {
+  color: var(--muted);
+}
+
+.error {
+  color: #8a2e3b;
+}
+
+@media (max-width: 760px) {
+  .seating {
+    grid-template-columns: 1fr;
+  }
+
+  .masthead {
+    min-height: 290px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
 }
