@@ -1,10 +1,22 @@
 const guests = [
-  { firstName: "George", lastName: "Boulos", table: "1", note: "Family table" },
-  { firstName: "Anna", lastName: "Boulos", table: "1", note: "Family table" },
-  { firstName: "Mariam", lastName: "Hanna", table: "4", note: "Garden Room" },
-  { firstName: "Joseph", lastName: "Mansour", table: "7", note: "Near the dance floor" },
-  { firstName: "Sarah", lastName: "Khalil", table: "9", note: "Blue Salon" },
-  { firstName: "Michael", lastName: "Aziz", table: "12", note: "Terrace side" }
+  { firstName: "Gina", lastName: "Boulos", table: "Head table", note: "Bride & Groom table" },
+  { firstName: "Jacob", lastName: "Lawrence", table: "head Table", note: "Bride & Groom table" },
+  { firstName: "Anna", lastName: "Lawrence", table: "1", note: "Family Table" },
+  { firstName: "Britney", lastName: "Strange", table: "1", note: "Family Table" },
+  { firstName: "Stella", lastName: "Strange", table: "1", note: "Family Table" },
+  { firstName: "Walter", lastName: "Strange", table: "1", note: "Family Table" },
+  { firstName: "Fady", lastName: "Boulos", table: "1", note: "Family Table" },
+  { firstName: "Sophia", lastName: "Boulos", table: "1", note: "Family Table" },
+  { firstName: "Meera", lastName: "Boulos", table: "1", note: "Family Table" },
+  { firstName: "Sameh", lastName: "Basali", table: "1", note: "Family Table" },
+  { firstName: "Patrick", lastName: "Akhnoukh", table: "1", note: "Family Table" },
+  { firstName: "Pretty", lastName: "Akhnoukh", table: "1", note: "Family Table" },
+  { firstName: "Emmanuel", lastName: "Akhnoukh", table: "1", note: "Family Table" },
+  { firstName: "Matthew", lastName: "Akhnoukh", table: "1", note: "Family Table" },
+  { firstName: "Chris", lastName: "Basali", table: "1", note: "Family Table" },
+  { firstName: "Kavin", lastName: "Strange", table: "1", note: "Family Table" },
+  { firstName: "Refat", lastName: "Boulos", table: "1", note: "Family Table" },
+  { firstName: "Samia", lastName: "Boulos", table: "1", note: "Family Table" },
 ];
 
 const form = document.querySelector("#seating-form");
