@@ -17,6 +17,7 @@ const guests = [
   { firstName: "Kavin", lastName: "Strange", table: "1", note: "Family Table" },
   { firstName: "Refat", lastName: "Boulos", table: "1", note: "Family Table" },
   { firstName: "Samia", lastName: "Boulos", table: "1", note: "Family Table" },
+  { firstName: "Sandy", lastName: "Boulos", table: "1", note: "Family Table" }
 ];
 
 const form = document.querySelector("#seating-form");
