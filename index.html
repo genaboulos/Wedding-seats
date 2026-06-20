@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Wedding Seating</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Table</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Elegant Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <div class="background-overlay"></div>
+
     <div class="container">
         <h1>Find Your Table</h1>
+        <p class="subtitle">
+            Welcome to our celebration.  
+            Please enter your name below to find your seat.
+        </p>
 
         <input id="firstName" placeholder="First Name">
         <input id="lastName" placeholder="Last Name">
 
-        <button onclick="findGuest()">Search</button>
+        <button onclick="findGuest()">Find My Seat</button>
 
         <div id="result"></div>
     </div>
@@ -41,12 +54,13 @@
 
             if (guest) {
                 result.innerHTML =
-                  `Hello ${guest.firstName} ${guest.lastName}, you're in table ${guest.table}.`;
+                    `Hello ${guest.firstName} ${guest.lastName},<br> you’re seated at <strong>Table ${guest.table}</strong>.`;
             } else {
                 result.innerHTML =
-                  "Sorry, we couldn't find your reservation.";
+                    "We couldn’t find your reservation. Please see our coordinator.";
             }
         }
     </script>
+
 </body>
 </html>
