@@ -1,336 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Wedding Seating</title>
-    <style>
-      :root {
-        --ink: #17324d;
-        --muted: #5e7891;
-        --blue-900: #123a5a;
-        --blue-700: #27618f;
-        --blue-400: #8bbce0;
-        --blue-100: #eaf5ff;
-        --white: #ffffff;
-        --paper: rgba(255, 255, 255, 0.88);
-        --line: rgba(74, 123, 160, 0.26);
-        --gold: #b68a48;
-        --shadow: 0 28px 70px rgba(18, 58, 90, 0.16);
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Seating</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      * {
-        box-sizing: border-box;
-      }
+<body>
+  <main>
+    <section class="seating" aria-label="Wedding seating lookup">
+      <div class="masthead">
+        <div class="monogram" aria-label="Jacob and Gina">Jacob &amp; Gina</div>
+        <div>
+          <h1>Wedding Seating</h1>
+          <div class="date">Reception Seating</div>
+        </div>
+      </div>
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        color: var(--ink);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(222, 239, 252, 0.82)),
-          url("assets/blue-floral-frame.svg") center / cover no-repeat fixed;
-      }
+      <div class="lookup">
+        <h2>Find Your Table</h2>
 
-      main {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 32px 18px;
-      }
-
-      .seating {
-        width: min(100%, 940px);
-        display: grid;
-        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--paper);
-        box-shadow: var(--shadow);
-        backdrop-filter: blur(18px);
-      }
-
-      .masthead {
-        min-height: 560px;
-        padding: clamp(30px, 5vw, 56px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58)),
-          linear-gradient(180deg, rgba(221, 239, 252, 0.42), rgba(255, 255, 255, 0.76)),
-          url("assets/wedding-photo.jpg") center / cover no-repeat;
-        border-right: 1px solid var(--line);
-      }
-
-      .monogram {
-        color: var(--blue-900);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.6rem, 4vw, 2.4rem);
-        font-style: italic;
-        line-height: 1.1;
-      }
-
-      h1 {
-        margin: 0;
-        max-width: 11ch;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(3.4rem, 8vw, 6.6rem);
-        line-height: 0.92;
-        font-weight: 400;
-        color: var(--blue-900);
-      }
-
-      .date {
-        margin-top: 24px;
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        color: var(--blue-700);
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-      }
-
-      .date::before {
-        content: "";
-        width: 42px;
-        height: 1px;
-        background: var(--gold);
-      }
-
-      .lookup {
-        padding: clamp(28px, 5vw, 52px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 26px;
-        background: rgba(255, 255, 255, 0.76);
-      }
-
-      .lookup h2 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2rem, 4vw, 3rem);
-        line-height: 1.04;
-        font-weight: 400;
-        color: var(--blue-900);
-      }
-
-      form {
-        display: grid;
-        gap: 16px;
-      }
-
-      .field {
-        display: grid;
-        gap: 8px;
-      }
-
-      label {
-        color: var(--muted);
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-      }
-
-      input {
-        width: 100%;
-        min-height: 54px;
-        border: 1px solid rgba(39, 97, 143, 0.28);
-        border-radius: 8px;
-        padding: 0 16px;
-        color: var(--ink);
-        font: inherit;
-        background: rgba(255, 255, 255, 0.92);
-        outline: none;
-        transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
-      }
-
-      input:focus {
-        border-color: var(--blue-700);
-        box-shadow: 0 0 0 4px rgba(139, 188, 224, 0.28);
-        background: var(--white);
-      }
-
-      button {
-        min-height: 54px;
-        border: 0;
-        border-radius: 8px;
-        padding: 0 18px;
-        color: var(--white);
-        font: inherit;
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
-        cursor: pointer;
-        transition: transform 160ms ease, box-shadow 160ms ease;
-        box-shadow: 0 14px 28px rgba(18, 58, 90, 0.22);
-      }
-
-      button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 18px 34px rgba(18, 58, 90, 0.26);
-      }
-
-      button:active {
-        transform: translateY(0);
-      }
-
-      .result {
-        min-height: 148px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 22px;
-        background: linear-gradient(180deg, rgba(234, 245, 255, 0.88), rgba(255, 255, 255, 0.94));
-      }
-
-      .result[hidden] {
-        display: none;
-      }
-
-      .eyebrow {
-        margin: 0 0 10px;
-        color: var(--gold);
-        font-size: 0.74rem;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-      }
-
-      .guest-name {
-        margin: 0 0 14px;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(1.75rem, 4vw, 2.4rem);
-        line-height: 1.05;
-        color: var(--blue-900);
-      }
-
-      .table {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 10px;
-        color: var(--blue-900);
-      }
-
-      .table strong {
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 3rem;
-        line-height: 1;
-      }
-
-      .note {
-        margin: 14px 0 0;
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .error {
-        color: #8a2e3b;
-        background: linear-gradient(180deg, rgba(255, 244, 246, 0.9), rgba(255, 255, 255, 0.94));
-        border-color: rgba(138, 46, 59, 0.22);
-      }
-
-      @media (max-width: 760px) {
-        main {
-          padding: 14px;
-          place-items: start center;
-        }
-
-        .seating {
-          grid-template-columns: 1fr;
-        }
-
-        .masthead {
-          min-height: 290px;
-          border-right: 0;
-          border-bottom: 1px solid var(--line);
-        }
-
-        .lookup {
-          padding: 28px 20px 24px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section class="seating" aria-label="Wedding seating lookup">
-        <div class="masthead">
-          <div class="monogram" aria-label="Jacob and Gina">Jacob &amp; Gina</div>
-          <div>
-            <h1>Wedding Seating</h1>
-            <div class="date">Reception Seating</div>
+        <form id="seating-form">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="firstName" autocomplete="given-name" required />
           </div>
-        </div>
 
-        <div class="lookup">
-          <h2>Find Your Table</h2>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="lastName" autocomplete="family-name" required />
+          </div>
 
-          <form id="seating-form">
-            <div class="field">
-              <label for="first-name">First Name</label>
-              <input id="first-name" name="firstName" autocomplete="given-name" required />
-            </div>
-            <div class="field">
-              <label for="last-name">Last Name</label>
-              <input id="last-name" name="lastName" autocomplete="family-name" required />
-            </div>
-            <button type="submit">Find Table</button>
-          </form>
+          <button type="submit">Find Table</button>
+        </form>
 
-          <div id="result" class="result" hidden aria-live="polite"></div>
-        </div>
-      </section>
-    </main>
+        <div id="result" class="result" hidden aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
 
-    <script>
-      const guests = [
-        { firstName: "George", lastName: "Boulos", table: "1", note: "Family table" },
-        { firstName: "Anna", lastName: "Boulos", table: "1", note: "Family table" },
-        { firstName: "Mariam", lastName: "Hanna", table: "4", note: "Garden Room" },
-        { firstName: "Joseph", lastName: "Mansour", table: "7", note: "Near the dance floor" },
-        { firstName: "Sarah", lastName: "Khalil", table: "9", note: "Blue Salon" },
-        { firstName: "Michael", lastName: "Aziz", table: "12", note: "Terrace side" }
-      ];
-
-      const form = document.querySelector("#seating-form");
-      const result = document.querySelector("#result");
-      const normalize = (value) => value.trim().toLowerCase().replace(/\s+/g, " ");
-
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const firstName = normalize(formData.get("firstName"));
-        const lastName = normalize(formData.get("lastName"));
-        const guest = guests.find((person) => (
-          normalize(person.firstName) === firstName &&
-          normalize(person.lastName) === lastName
-        ));
-
-        result.hidden = false;
-        result.classList.toggle("error", !guest);
-
-        if (guest) {
-          result.innerHTML = `
-            <p class="eyebrow">Welcome</p>
-            <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
-            <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
-            <p class="note">${guest.note || "We are so happy you are here."}</p>
-          `;
-          return;
-        }
-
-        result.innerHTML = `
-          <p class="eyebrow">Guest Not Found</p>
-          <p class="guest-name">Please check the spelling</p>
-          <p class="note">A member of the wedding team can help you find your table.</p>
-        `;
-      });
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
