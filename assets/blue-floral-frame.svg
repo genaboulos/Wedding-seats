@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Blue watercolor floral wedding frame">
+  <defs>
+    <linearGradient id="wash" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="0.52" stop-color="#d9ebfb"/>
+      <stop offset="1" stop-color="#fdfefe"/>
+    </linearGradient>
+    <radialGradient id="petal" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".96"/>
+      <stop offset=".58" stop-color="#b9d8f1" stop-opacity=".74"/>
+      <stop offset="1" stop-color="#6e9eca" stop-opacity=".2"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#wash)"/>
+  <path d="M110 588C238 678 351 703 507 671c139-28 239-8 361 38 81 31 166 29 238-16" fill="none" stroke="#8db9dc" stroke-width="2" opacity=".34"/>
+  <path d="M80 146c134-64 267-77 411-35 111 33 203 16 309-21 99-35 210-24 316 35" fill="none" stroke="#9fc8e7" stroke-width="2" opacity=".3"/>
+  <g opacity=".95">
+    <g transform="translate(102 92)">
+      <path d="M36 102C57 50 92 18 139 5c-4 51-28 90-71 116" fill="#8fbfe3" opacity=".6"/>
+      <path d="M78 143C106 91 151 60 211 50c-10 63-45 106-104 129" fill="#4b82b4" opacity=".24"/>
+      <path d="M26 162c55-19 108-12 158 23-45 36-96 45-153 28" fill="#b9d8f1" opacity=".65"/>
+      <path d="M146 138c24-33 60-50 108-52-17 42-49 67-97 74" fill="#2d5d89" opacity=".18"/>
+      <path d="M68 120c47 39 93 60 140 63" fill="none" stroke="#2f5f8e" stroke-width="4" stroke-linecap="round" opacity=".42"/>
+      <circle cx="57" cy="126" r="26" fill="url(#petal)"/>
+      <circle cx="100" cy="144" r="35" fill="url(#petal)"/>
+      <circle cx="139" cy="114" r="25" fill="url(#petal)"/>
+    </g>
+    <g transform="translate(942 518) rotate(180 100 80)">
+      <path d="M36 102C57 50 92 18 139 5c-4 51-28 90-71 116" fill="#8fbfe3" opacity=".56"/>
+      <path d="M78 143C106 91 151 60 211 50c-10 63-45 106-104 129" fill="#4b82b4" opacity=".25"/>
+      <path d="M26 162c55-19 108-12 158 23-45 36-96 45-153 28" fill="#c5e0f4" opacity=".68"/>
+      <path d="M146 138c24-33 60-50 108-52-17 42-49 67-97 74" fill="#2d5d89" opacity=".17"/>
+      <path d="M68 120c47 39 93 60 140 63" fill="none" stroke="#2f5f8e" stroke-width="4" stroke-linecap="round" opacity=".42"/>
+      <circle cx="57" cy="126" r="26" fill="url(#petal)"/>
+      <circle cx="100" cy="144" r="35" fill="url(#petal)"/>
+      <circle cx="139" cy="114" r="25" fill="url(#petal)"/>
+    </g>
+  </g>
+  <g fill="none" stroke="#245278" stroke-linecap="round" opacity=".22" filter="url(#soft)">
+    <path d="M183 630c60-84 126-128 199-133"/>
+    <path d="M1010 132c-70 50-131 80-184 89"/>
+    <path d="M965 648c-46-67-99-107-160-119"/>
+  </g>
+</svg>
