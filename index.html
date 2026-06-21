@@ -1,45 +1,42 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wedding Seating</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <main>
-    <section class="seating" aria-label="Wedding seating lookup">
-      <div class="masthead">
-        <div class="monogram" aria-label="Jacob and Gina">Jacob &amp; Gina</div>
-        <div>
-          <h1>Wedding Seating</h1>
-          <div class="date">Reception Seating</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wedding Seating</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="seating" aria-label="Wedding seating lookup">
+        <div class="masthead">
+          <div class="monogram" aria-label="Jacob and Gina">Jacob &amp; Gina</div>
+          <div>
+            <h1>Wedding Seating</h1>
+            <div class="date">Reception Seating</div>
+          </div>
         </div>
-      </div>
 
-      <div class="lookup">
-        <h2>Find Your Table</h2>
+        <div class="lookup">
+          <h2>Find Your Table</h2>
 
-        <form id="seating-form">
-          <div class="field">
-            <label for="first-name">First Name</label>
-            <input id="first-name" name="firstName" autocomplete="given-name" required />
-          </div>
+          <form id="seating-form">
+            <div class="field">
+              <label for="first-name">First Name</label>
+              <input id="first-name" name="firstName" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" name="lastName" autocomplete="family-name" required />
+            </div>
+            <button type="submit">Find Table</button>
+          </form>
 
-          <div class="field">
-            <label for="last-name">Last Name</label>
-            <input id="last-name" name="lastName" autocomplete="family-name" required />
-          </div>
+          <div id="result" class="result" hidden aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
 
-          <button type="submit">Find Table</button>
-        </form>
-
-        <div id="result" class="result" hidden aria-live="polite"></div>
-      </div>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
