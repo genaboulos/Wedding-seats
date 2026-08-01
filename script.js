@@ -52,19 +52,14 @@ form.addEventListener("submit", (event) => {
   result.classList.toggle("error", !guest);
 
   if (guest) {
-  const ceremonyLine = guest.ceremony
-    ? `<p class="note">Ceremony seating: ${guest.ceremony}</p>`
-    : "";
-
-  result.innerHTML = `
-    <p class="eyebrow">Welcome</p>
-    <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
-    <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
-    ${ceremonyLine}
-    <p class="note">${guest.note || "We are so happy you are here."}</p>
-  `;
-  return;
-}
+    result.innerHTML = `
+      <p class="eyebrow">Welcome</p>
+      <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
+      <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
+      <p class="note">${guest.note || "We are so happy you are here."}</p>
+    `;
+    return;
+  }
 
   result.innerHTML = `
     <p class="eyebrow">Guest Not Found</p>
