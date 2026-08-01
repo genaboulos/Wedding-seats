@@ -65,8 +65,8 @@ form.addEventListener("submit", (event) => {
   }
 
   const ceremonyLine = hasCeremony
-    ? `<p class="note">Ceremony: ${guest.ceremony}</p>`
-    : "";
+  ? `<p class="ceremony-note">Ceremony: ${guest.ceremony}</p>`
+  : "";
 
   result.innerHTML = `
     <p class="eyebrow">Welcome</p>
