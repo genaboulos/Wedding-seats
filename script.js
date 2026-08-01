@@ -53,11 +53,12 @@ form.addEventListener("submit", (event) => {
 
   if (guest) {
     result.innerHTML = `
-      <p class="eyebrow">Welcome</p>
-      <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
-      <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
-      <p class="note">${guest.note || "We are so happy you are here."}</p>
-    `;
+  <p class="eyebrow">Welcome</p>
+  <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
+  <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
+  <p class="note">Ceremony: ${guest.ceremony}</p>
+  <p class="note">${guest.note || "We are so happy you are here."}</p>
+`;
     return;
   }
 
