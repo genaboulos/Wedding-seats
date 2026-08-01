@@ -226,7 +226,12 @@ button:active {
   font-style: italic;
   line-height: 1.55;
 }
-
+.ceremony-note {
+  margin: 14px 0 0;
+  color: #27618f;
+  font-style: normal;
+  line-height: 1.55;
+}
 .error {
   color: #8a2e3b;
   background: linear-gradient(180deg, rgba(255, 244, 246, 0.9), rgba(255, 255, 255, 0.94));
