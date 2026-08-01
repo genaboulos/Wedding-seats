@@ -1,7 +1,9 @@
 const form = document.querySelector("#seating-form");
 const result = document.querySelector("#result");
-const normalize = (value) => value.trim().toLowerCase().replace(/\s+/g, " ");
+
 let guests = [];
+
+const normalize = (value) => String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
 
 const parseCSV = (csvText) => {
   const lines = csvText.trim().split(/\r?\n/);
@@ -52,10 +54,25 @@ form.addEventListener("submit", (event) => {
   result.classList.toggle("error", !guest);
 
   if (guest) {
+    const hasTable = guest.table && guest.table.trim();
+    const hasCeremony = guest.ceremony && guest.ceremony.trim();
+
+    if (!hasTable) {
+      result.innerHTML = `
+        <p class="note">${guest.note || "Please see the welcome desk."}</p>
+      `;
+      return;
+    }
+
+    const ceremonyLine = hasCeremony
+      ? `<p class="note">Ceremony seating: ${guest.ceremony}</p>`
+      : "";
+
     result.innerHTML = `
       <p class="eyebrow">Welcome</p>
       <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
       <div class="table"><span>Table</span><strong>${guest.table}</strong></div>
+      ${ceremonyLine}
       <p class="note">${guest.note || "We are so happy you are here."}</p>
     `;
     return;
