@@ -73,7 +73,7 @@ form.addEventListener("submit", (event) => {
     <p class="guest-name">${guest.firstName} ${guest.lastName}</p>
     ${ceremonyLine}
     <div class="table"><span>Reception</span><strong>${guest.table}</strong></div>
-    <p class="note">${guest.note || "We are so happy you are here."}</p>
+    <p class="guest-note">${guest.note || "We are so happy you are here."}</p>
   `;
   return;
 }
