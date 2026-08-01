@@ -217,7 +217,8 @@ button:active {
 
 .note {
   margin: 14px 0 0;
-  color: var(--muted);
+  color: #27618f;
+  font-style: italic;
   line-height: 1.55;
 }
 
